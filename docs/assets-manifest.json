@@ -1,0 +1,136 @@
+{
+  "reviewed": "2026-10-21",
+  "public_root": "public/assets/portfolio",
+  "files": [
+    {
+      "path": "avatar/zhao-tang-portrait.webp",
+      "bytes": 21874,
+      "sha256": "c9f85ca8a7399535ae6a5326edc2e4999fdf9a7d21e75c0d9ebbfd0a4073162c",
+      "width": 400,
+      "height": 500,
+      "frames": 1
+    },
+    {
+      "path": "projects/clickstream/api-docs.webp",
+      "bytes": 99646,
+      "sha256": "adcd2cdefeed811c8641a3f109745a4fdb081248fb13f0f5768adf4afafd3bb6",
+      "width": 1600,
+      "height": 1610,
+      "frames": 1
+    },
+    {
+      "path": "projects/clickstream/grafana-dashboard.webp",
+      "bytes": 119860,
+      "sha256": "425425221c1b21e89f00a341de1a8e511b18c2bc51fd6770fcca656f52a6ef7a",
+      "width": 1600,
+      "height": 1610,
+      "frames": 1
+    },
+    {
+      "path": "projects/clickstream/prometheus-alerts.webp",
+      "bytes": 134594,
+      "sha256": "e5157c27c681092ba45c836868a609c0affcdea4df43742b397f66b147b1a12c",
+      "width": 1600,
+      "height": 1610,
+      "frames": 1
+    },
+    {
+      "path": "projects/graphatlas/graphatlas-demo01-poster.webp",
+      "bytes": 31534,
+      "sha256": "7c57d87ce81fcbff5e354f6e08bab6d9797c7900b162de402edb00b03cfb6838",
+      "width": 1154,
+      "height": 950,
+      "frames": 1
+    },
+    {
+      "path": "projects/graphatlas/graphatlas-demo02-poster.webp",
+      "bytes": 24952,
+      "sha256": "e12d071b276bcc96140f91ae0a2582f6b2cccd5ab1f9ad902baeef196d4af837",
+      "width": 1154,
+      "height": 952,
+      "frames": 1
+    },
+    {
+      "path": "projects/graphatlas/graphatlas-demo03-poster.webp",
+      "bytes": 32376,
+      "sha256": "4f1a31938c641fd3387a1421ab95a9629e690bb5e49394c73f01e8f595be79c3",
+      "width": 1154,
+      "height": 952,
+      "frames": 1
+    },
+    {
+      "path": "projects/graphatlas/media/graphatlas-demo01.mp4",
+      "bytes": 2687310,
+      "sha256": "660eb24812d646301fb6ae6294fe044a3a286f1b9443d2214000642405389734",
+      "mime": "video/mp4"
+    },
+    {
+      "path": "projects/graphatlas/media/graphatlas-demo02.mp4",
+      "bytes": 3895653,
+      "sha256": "75133fff6cc1c64e50b78a24cbce34cac993ba9c97dfbb8be52bc8c88bb08438",
+      "mime": "video/mp4"
+    },
+    {
+      "path": "projects/graphatlas/media/graphatlas-demo03.mp4",
+      "bytes": 1542489,
+      "sha256": "ca3ca788da6429ef59a23c49c2166048e73cc032451809ef1f87e7ca750d549e",
+      "mime": "video/mp4"
+    },
+    {
+      "path": "projects/nanotrack/airflow-preview.webp",
+      "bytes": 20122,
+      "sha256": "791d156804b338434fa744ef432c871a8b22c359f4f0c07a91bd5ac6a857e743",
+      "width": 1540,
+      "height": 550,
+      "frames": 1
+    },
+    {
+      "path": "projects/nanotrack/grafana-preview.webp",
+      "bytes": 72626,
+      "sha256": "5b3f16e78bbac779fd8d96bfd5aaa68fbed4429ccef9612c4877abe4e1efcf47",
+      "width": 1430,
+      "height": 935,
+      "frames": 1
+    },
+    {
+      "path": "projects/nanotrack/prometheus-preview.webp",
+      "bytes": 32030,
+      "sha256": "3ae6e233eb7f06e1bb3d85bb87be10ea71e428a69e1b16df6be155dbe561097e",
+      "width": 1540,
+      "height": 550,
+      "frames": 1
+    },
+    {
+      "path": "projects/nanotrack/tracking-overlay.webp",
+      "bytes": 396692,
+      "sha256": "47b94281462dfa7365f37c643605ca61628450835a308fe3e149b4eeb49d6b22",
+      "width": 300,
+      "height": 300,
+      "frames": 30
+    },
+    {
+      "path": "projects/nanotrack/tracking-qc-preview.webp",
+      "bytes": 76766,
+      "sha256": "99ffc4c2c077325230807862c19c33be3b8e30387d428a5f62a91a86358edcd6",
+      "width": 1540,
+      "height": 1210,
+      "frames": 1
+    },
+    {
+      "path": "projects/nanotrack/tracking-report-10k-preview.webp",
+      "bytes": 60218,
+      "sha256": "36871ea3618101ad532261cfd70ecd46f3ed06c8f36107b8cde5ab3a0a066d6b",
+      "width": 1240,
+      "height": 1140,
+      "frames": 1
+    },
+    {
+      "path": "projects/nl2sql/overview.webp",
+      "bytes": 88124,
+      "sha256": "4e036932abc2727dcf295530fa3a966cb8b839884bd0702f87d4110a3a0751dc",
+      "width": 1473,
+      "height": 898,
+      "frames": 1
+    }
+  ]
+}
