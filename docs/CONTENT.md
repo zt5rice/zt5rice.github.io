@@ -12,7 +12,7 @@ must remain traceable to the evidence register in this document.
 
 ### Site title
 
-`Zhao Tang — Software Engineer, Data & AI Systems`
+`Dr. Zhao Tang — Software Engineer, Data & AI Systems`
 
 ### Meta description
 
@@ -63,7 +63,7 @@ Eyebrow:
 
 Name:
 
-`ZHAO TANG`
+`Dr. Zhao Tang`
 
 Discipline:
 

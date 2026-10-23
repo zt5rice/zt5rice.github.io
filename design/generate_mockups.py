@@ -346,8 +346,8 @@ def draw_hero_desktop(canvas: Canvas):
     canvas.text(96, 146, "SAN DIEGO / CALIFORNIA", 12, "mono-bold", ORANGE)
     canvas.line([(96, 174), (258, 174)], (86, 49, 34, 255), 2)
 
-    canvas.text(96, 202, "ZHAO", 106, "heavy", TEXT)
-    canvas.text(96, 302, "TANG", 106, "heavy", TEXT)
+    canvas.text(96, 202, "Dr. Zhao", 96, "heavy", TEXT)
+    canvas.text(96, 302, "Tang", 106, "heavy", TEXT)
     canvas.rect(96, 424, 88, 6, 3, ORANGE)
     canvas.text(96, 456, "Software Engineer · Data & AI Systems", 30, "demi", TEXT)
     canvas.paragraph(
@@ -374,7 +374,7 @@ def draw_hero_desktop(canvas: Canvas):
     canvas.rect(922, 130, 422, 574, 18, (15, 18, 21, 255), BORDER, 1)
     canvas.image_cover(AVATAR, 940, 148, 386, 482, 12)
     canvas.overlay_rect(940, 646, 386, 38, 0, (9, 11, 13, 215))
-    canvas.text(956, 665, "ZHAO TANG / SAN DIEGO", 10, "mono", TEXT, "lm")
+    canvas.text(956, 665, "Dr. Zhao Tang / San Diego", 10, "mono", TEXT, "lm")
     canvas.text(1310, 665, "PORTRAIT 01", 9, "mono", ORANGE, "rm")
     canvas.line([(940, 704), (1326, 704)], (255, 106, 61, 180), 2)
     canvas.line([(1326, 704), (1326, 760)], BORDER, 1)
@@ -561,8 +561,8 @@ def mobile_home():
     canvas.glow((330, 330), 190, ORANGE, 20)
 
     canvas.text(24, 100, "SAN DIEGO / CALIFORNIA", 10, "mono-bold", ORANGE)
-    canvas.text(24, 132, "ZHAO", 64, "heavy", TEXT)
-    canvas.text(24, 192, "TANG", 64, "heavy", TEXT)
+    canvas.text(24, 132, "Dr. Zhao", 58, "heavy", TEXT)
+    canvas.text(24, 192, "Tang", 66, "heavy", TEXT)
     canvas.rect(24, 270, 62, 5, 3, ORANGE)
     canvas.text(24, 296, "Software Engineer", 23, "demi", TEXT)
     canvas.text(24, 326, "Data & AI Systems", 23, "demi", TEXT)
