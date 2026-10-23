@@ -1,84 +1,16 @@
 ---
+import Hero from "../components/Hero.astro";
+import ProofStrip from "../components/ProofStrip.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site } from "../data/site";
 ---
 
 <BaseLayout>
-  <main id="main" class="scaffold">
-    <div class="container">
-      <p class="label">Portfolio v2 / Foundation</p>
-      <h1>{site.person.name}</h1>
-      <p class="discipline">Software Engineer · Data & AI Systems</p>
-      <p class="summary">
-        Astro foundation is ready. The approved hero, selected work, experience,
-        research, and contact implementation will follow in ZHA-191 through
-        ZHA-193.
-      </p>
-      <div class="actions">
-        <a class="button button-primary" href={site.resume}>Download resume</a>
-        <a class="button" href={site.person.github}>View GitHub</a>
-      </div>
-    </div>
+  <SiteHeader />
+  <main id="main">
+    <Hero />
+    <ProofStrip />
   </main>
+  <SiteFooter />
 </BaseLayout>
-
-<style>
-  .scaffold {
-    display: grid;
-    min-height: 100vh;
-    align-items: center;
-    padding-block: var(--space-16);
-  }
-
-  h1 {
-    max-width: 12ch;
-    margin: var(--space-4) 0 0;
-    font-size: clamp(4rem, 11vw, 8rem);
-    font-weight: 700;
-    letter-spacing: -0.065em;
-    line-height: 0.92;
-  }
-
-  .discipline {
-    margin: var(--space-6) 0 0;
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    font-weight: 500;
-    letter-spacing: -0.025em;
-  }
-
-  .summary {
-    max-width: 42rem;
-    margin: var(--space-6) 0 0;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-  }
-
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-8);
-  }
-
-  .button {
-    display: inline-flex;
-    min-height: 2.875rem;
-    align-items: center;
-    justify-content: center;
-    padding-inline: 1.3rem;
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  .button-primary {
-    border-color: var(--accent);
-    background: var(--accent);
-    color: var(--bg);
-  }
-</style>

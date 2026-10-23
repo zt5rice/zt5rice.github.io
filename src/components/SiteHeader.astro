@@ -1,0 +1,208 @@
+---
+import { navigation, site } from "../data/site";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Dr. Zhao Tang, home">
+      <span class="brand-mark" aria-hidden="true">ZT</span>
+      <span>Portfolio</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      {
+        navigation.map((item) => (
+          <a class="nav-link" href={item.href}>{item.label}</a>
+        ))
+      }
+      <a class="resume-link" href={site.resume} download>Resume ↗</a>
+    </nav>
+
+    <details class="mobile-nav" data-mobile-nav>
+      <summary>Menu</summary>
+      <nav class="mobile-panel" aria-label="Mobile">
+        {
+          navigation.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))
+        }
+        <a href={site.resume} download>Download resume ↗</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  const mobileNavigations = document.querySelectorAll<HTMLDetailsElement>(
+    "[data-mobile-nav]",
+  );
+
+  mobileNavigations.forEach((details) => {
+    details.addEventListener("click", (event) => {
+      if ((event.target as Element).closest("a")) {
+        details.removeAttribute("open");
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    mobileNavigations.forEach((details) => {
+      if (!details.open) return;
+      details.removeAttribute("open");
+      details.querySelector("summary")?.focus();
+    });
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--border);
+    background: rgba(9, 11, 13, 0.9);
+    backdrop-filter: blur(14px);
+  }
+
+  .header-inner {
+    display: flex;
+    min-height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 1.9rem;
+    height: 1.9rem;
+    place-items: center;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.62rem;
+    letter-spacing: 0;
+  }
+
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 1.65rem;
+  }
+
+  .nav-link,
+  .resume-link {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    color: var(--text-muted);
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .resume-link {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+  }
+
+  .resume-link:hover {
+    border-color: var(--accent);
+  }
+
+  .mobile-nav {
+    position: relative;
+  }
+
+  .mobile-nav summary {
+    padding: 0.75rem 0;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-nav summary::after {
+    content: " +";
+    color: var(--accent);
+  }
+
+  .mobile-nav[open] summary::after {
+    content: " −";
+  }
+
+  .mobile-panel {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    display: grid;
+    width: min(18rem, calc(100vw - 3rem));
+    padding: 0.75rem;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.45);
+  }
+
+  .mobile-panel a {
+    padding: 0.8rem 0.65rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .mobile-panel a:last-child {
+    border-bottom: 0;
+    color: var(--accent);
+  }
+
+  .mobile-panel a:hover {
+    color: var(--text);
+  }
+
+  @media (min-width: 64rem) {
+    .header-inner {
+      min-height: 5.5rem;
+    }
+
+    .desktop-nav {
+      display: flex;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+  }
+</style>

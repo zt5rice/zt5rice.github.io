@@ -1,0 +1,73 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="label">ZT / Portfolio</p>
+      <p class="footer-copy">Designed and built by Dr. Zhao Tang.</p>
+    </div>
+    <nav aria-label="Contact">
+      <a href={`mailto:${site.person.email}`}>Email</a>
+      <a href={site.person.github}>GitHub</a>
+      <a href={site.person.linkedin}>LinkedIn</a>
+      <a href={site.resume} download>Resume</a>
+    </nav>
+    <p class="copyright">© 2026 · San Diego, California</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: 2rem;
+    padding-block: 2.5rem;
+  }
+
+  .footer-copy {
+    margin: 0.6rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+
+  nav a,
+  .copyright {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .copyright {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  @media (min-width: 48rem) {
+    .footer-inner {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    .copyright {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
