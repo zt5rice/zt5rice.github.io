@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found — Dr. Zhao Tang" noindex>
+  <main id="main" class="not-found">
+    <div class="container">
+      <p class="label">404 / Not found</p>
+      <h1>This route does not exist.</h1>
+      <p>The page may have moved, or the address may be incomplete.</p>
+      <a class="back-link" href="/">Return home →</a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    min-height: 100vh;
+    align-items: center;
+  }
+
+  h1 {
+    max-width: 12ch;
+    margin: var(--space-4) 0;
+    font-size: clamp(3rem, 9vw, 7rem);
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+  }
+
+  p:not(.label) {
+    color: var(--text-muted);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: var(--space-6);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+</style>
