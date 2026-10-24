@@ -55,7 +55,7 @@ export const experience = [
     bullets: [
       "Developed automated image-processing and optical-analysis software in Python and MATLAB.",
       "Reduced per-experiment processing time from 15 hours to 30 minutes through cluster parallelization.",
-      "Published methods and datasets that support 12 peer-reviewed papers.",
+      "Published methods and datasets that support 6 peer-reviewed papers, with additional conference posters and presentations.",
     ],
   },
 ] as const;
