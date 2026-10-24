@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
 const projects = (await getCollection("work")).sort(
   (a, b) => a.data.order - b.data.order,
@@ -26,15 +27,19 @@ const projects = (await getCollection("work")).sort(
             class="project-card"
             href={`/work/${project.id}/`}
             aria-label={`Read the ${project.data.title} case study`}
+            data-reveal
+            style={`--reveal-delay: ${index * 55}ms`}
           >
             <div class="project-media">
-              <img
+              <ResponsiveImage
                 src={project.data.poster}
                 width={project.data.posterWidth}
                 height={project.data.posterHeight}
                 alt=""
                 loading="lazy"
                 decoding="async"
+                className="project-image"
+                sizes="(min-width: 48rem) 44vw, calc(100vw - 3rem)"
               />
               <span class="project-index">
                 {String(index + 1).padStart(2, "0")}
@@ -120,14 +125,19 @@ const projects = (await getCollection("work")).sort(
     background: #101315;
   }
 
-  .project-media img {
+  .project-media :global(picture) {
+    width: 100%;
+    height: 100%;
+  }
+
+  :global(.project-image) {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 500ms var(--ease-out);
   }
 
-  .project-card:hover img {
+  .project-card:hover :global(.project-image) {
     transform: scale(1.015);
   }
 

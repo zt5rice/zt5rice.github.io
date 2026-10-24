@@ -23,6 +23,16 @@ npm run build
 npm run preview
 ```
 
+## Media generation
+
+```bash
+python3 scripts/generate_responsive_images.py
+python3 scripts/generate_og_image.py
+```
+
+The first command creates 640/1280 WebP and AVIF variants for static portfolio
+images. The second creates the 1200x630 Open Graph image.
+
 ## Site structure
 
 - `src/pages/`: routes

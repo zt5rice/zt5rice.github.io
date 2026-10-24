@@ -28,6 +28,7 @@ const media = z.object({
   caption: z.string(),
   width: z.number().int().positive(),
   height: z.number().int().positive(),
+  responsive: z.boolean().default(true),
 });
 
 const work = defineCollection({
