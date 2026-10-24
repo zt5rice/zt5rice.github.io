@@ -184,7 +184,7 @@ Visible metrics:
 
 - `1.03M rows`
 - `<250 ms queries`
-- `81 + 51 tests`
+- `7–15 s LLM latency`
 
 Stack line:
 
@@ -338,8 +338,7 @@ Boundary:
 
 - `1,028,160 rows in the seeded sales table.`
 - `Measured GROUP BY and date-range queries between 78 ms and 235 ms; the documented query path stays under 250 ms.`
-- `End-to-end latency reduced from roughly 25 s to roughly 7 s by changing the model path.`
-- `81 backend tests and 51 frontend tests shipped with the application.`
+- `The documented end-to-end bottleneck is 7–15 s of LLM inference latency, rather than the local query path.`
 
 #### Trade-offs and limitations
 
@@ -620,10 +619,10 @@ number, add it here first with evidence.
 | F17 | GraphAtlas retrieval quality | hybrid Hit@5 `0.840`; vector-only `0.800` | `knowledgeRAG/README.md`; `benchmark/results/2026-08-22-hybrid.json` |
 | F18 | GraphAtlas faithfulness | `4.38 / 5` hybrid | `knowledgeRAG/README.md`; benchmark results JSON |
 | F19 | GraphAtlas latency | hybrid p95 `537 ms` | `knowledgeRAG/docs/BENCHMARK.md`; benchmark results JSON |
-| F20 | NL2SQL warehouse size | `1,028,160` rows | `NL2SQLAgent/README.md`; `NL2SQLAgent/docs/resume.md` |
+| F20 | NL2SQL warehouse size | `1,028,160` rows | `NL2SQLAgent/README.md`, Performance table |
 | F21 | NL2SQL query latency | measured `78–235 ms`; documented under `250 ms` | `NL2SQLAgent/README.md`, Performance table |
-| F22 | NL2SQL end-to-end latency | approximately `25 s → 7 s` | `NL2SQLAgent/docs/resume.md` |
-| F23 | NL2SQL tests | `81` backend + `51` frontend | `NL2SQLAgent/docs/resume.md` |
+| F22 | NL2SQL end-to-end latency | approximately `25 s → 7 s` | `public/resume/Zhao_Tang_Resume_DataAI_2026-10-21.pdf` |
+| F23 | NL2SQL tests | `81` backend + `51` frontend | `public/resume/Zhao_Tang_Resume_DataAI_2026-10-21.pdf` |
 | F24 | nanotrack validation run | `10,000` frames; anisotropic diffusion | `nanoparticle-video-pipeline/README.md`; tracking-report preview |
 
 ## Claims that must not be published

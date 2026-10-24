@@ -1,0 +1,520 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import ArchitectureDiagram from "../components/ArchitectureDiagram.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  project: CollectionEntry<"work">["data"];
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout
+  title={`${project.title} — Case study — Dr. Zhao Tang`}
+  description={project.summary}
+  image={project.poster}
+>
+  <SiteHeader />
+  <main id="main">
+    <article class="case-study">
+      <header class="case-hero">
+        <div class="container">
+          <a class="back-link" href="/#work">← All selected work</a>
+          <p class="label case-category">{project.category}</p>
+          <h1>{project.title}</h1>
+          <p class="deck">{project.deck}</p>
+
+          <p class="boundary">
+            <strong>Scope</strong>
+            <span>{project.boundary}</span>
+          </p>
+
+          <dl class="case-metrics">
+            {
+              project.metrics.map((metric) => (
+                <div>
+                  <dt>{metric.label}</dt>
+                  <dd>{metric.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+
+          <ul class="stack" aria-label="Technology stack">
+            {project.stack.map((technology) => <li>{technology}</li>)}
+          </ul>
+        </div>
+      </header>
+
+      <div class="case-body container">
+        <section id="problem" aria-labelledby="problem-title">
+          <p class="section-index">01 / Context</p>
+          <h2 id="problem-title">The problem</h2>
+          <p class="prose">{project.problem}</p>
+        </section>
+
+        <section id="architecture" aria-labelledby="architecture-title">
+          <p class="section-index">02 / Architecture</p>
+          <h2 id="architecture-title">How the system fits together</h2>
+          <ArchitectureDiagram
+            primary={project.architecture.primary}
+            supporting={project.architecture.supporting}
+            caption={project.architecture.caption}
+            label={`${project.title} architecture diagram`}
+          />
+        </section>
+
+        <section id="built" aria-labelledby="built-title">
+          <p class="section-index">03 / Engineering</p>
+          <h2 id="built-title">What I built</h2>
+          <ul class="built-list">
+            {project.built.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section id="evidence" aria-labelledby="evidence-title">
+          <p class="section-index">04 / Evidence</p>
+          <h2 id="evidence-title">Measured outcomes</h2>
+          <div class="evidence-grid">
+            {
+              project.evidence.map((item) => (
+                <article class="evidence-card">
+                  <strong>{item.value}</strong>
+                  <h3>{item.label}</h3>
+                  <p>{item.detail}</p>
+                  <a
+                    href={item.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item.sourceLabel} ↗
+                  </a>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="demo" aria-labelledby="demo-title">
+          <p class="section-index">05 / Demo</p>
+          <h2 id="demo-title">Product evidence</h2>
+          <div class="media-grid">
+            {
+              project.media.map((item) => (
+                <figure>
+                  {item.type === "video" ? (
+                    <video
+                      controls
+                      preload="none"
+                      poster={item.poster}
+                      width={item.width}
+                      height={item.height}
+                      playsinline
+                    >
+                      <source src={item.src} type="video/mp4" />
+                      Your browser does not support embedded video.
+                    </video>
+                  ) : (
+                    <img
+                      src={item.src}
+                      width={item.width}
+                      height={item.height}
+                      alt={item.alt}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  <figcaption>{item.caption}</figcaption>
+                </figure>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="tradeoffs" aria-labelledby="tradeoffs-title">
+          <p class="section-index">06 / Boundaries</p>
+          <h2 id="tradeoffs-title">Trade-offs and limitations</h2>
+          <ul class="limitations">
+            {project.limitations.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="project-close" aria-labelledby="sources-title">
+          <div>
+            <p class="section-index">07 / Sources</p>
+            <h2 id="sources-title">Inspect the work</h2>
+          </div>
+          <div class="source-actions">
+            <a
+              class="button button-primary"
+              href={project.repository}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+            {
+              project.sources.map((source) => (
+                <a href={source.url} target="_blank" rel="noreferrer">
+                  {source.label} ↗
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .case-hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: 3.5rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-hero::after {
+    position: absolute;
+    top: 8rem;
+    right: -9rem;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    background: rgba(255, 106, 61, 0.07);
+    content: "";
+    filter: blur(8rem);
+    pointer-events: none;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2.5rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+
+  .case-category {
+    margin: 0;
+  }
+
+  h1 {
+    max-width: 12ch;
+    margin: 0.9rem 0 0;
+    font-size: clamp(4rem, 15vw, 7rem);
+    font-weight: 700;
+    letter-spacing: -0.065em;
+    line-height: 0.92;
+  }
+
+  .deck {
+    max-width: 48rem;
+    margin: 1.6rem 0 0;
+    color: var(--text-muted);
+    font-size: clamp(1.05rem, 3vw, 1.25rem);
+    line-height: 1.65;
+  }
+
+  .boundary {
+    display: flex;
+    max-width: 58rem;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.8rem;
+    margin: 1.8rem 0 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .boundary strong {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .case-metrics {
+    display: grid;
+    gap: 0;
+    margin: 2.5rem 0 0;
+    border-block: 1px solid var(--border);
+  }
+
+  .case-metrics div {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-metrics div:last-child {
+    border-bottom: 0;
+  }
+
+  .case-metrics dt {
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .case-metrics dd {
+    margin: 0.35rem 0 0;
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .stack li {
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+  }
+
+  .case-body {
+    padding-block: 1rem 6rem;
+  }
+
+  .case-body section {
+    padding-block: 4rem;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 6rem;
+  }
+
+  .section-index {
+    margin: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 16ch;
+    margin: 0.65rem 0 0;
+    font-size: clamp(2.1rem, 7vw, 3.15rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.03;
+  }
+
+  .prose {
+    max-width: 47rem;
+    margin: 1.5rem 0 0;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .built-list,
+  .limitations {
+    display: grid;
+    gap: 0.9rem;
+    max-width: 56rem;
+    margin: 1.7rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .built-list li,
+  .limitations li {
+    position: relative;
+    padding-left: 1.45rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .built-list li::before,
+  .limitations li::before {
+    position: absolute;
+    top: 0.68em;
+    left: 0;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--accent);
+    content: "";
+  }
+
+  .evidence-grid,
+  .media-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .evidence-card {
+    padding: 1.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+  }
+
+  .evidence-card > strong {
+    color: var(--accent);
+    font-size: 1.65rem;
+    letter-spacing: -0.04em;
+  }
+
+  .evidence-card h3 {
+    margin: 0.5rem 0 0;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .evidence-card p {
+    margin: 0.7rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .evidence-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .media-grid figure {
+    margin: 0;
+  }
+
+  .media-grid img,
+  .media-grid video {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+  }
+
+  .media-grid figcaption {
+    margin-top: 0.65rem;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    line-height: 1.5;
+  }
+
+  .project-close {
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+  }
+
+  .source-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+  }
+
+  .source-actions > a:not(.button) {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 2.875rem;
+    align-items: center;
+    padding-inline: 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .button-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 48rem) {
+    .case-hero {
+      padding-block: 5rem 5.5rem;
+    }
+
+    .case-metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .case-metrics div {
+      padding: 1.4rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 0;
+    }
+
+    .case-metrics div:first-child {
+      padding-left: 0;
+    }
+
+    .case-metrics div:last-child {
+      border-right: 0;
+    }
+
+    .evidence-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .media-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .media-grid figure:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .project-close {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .case-body section {
+      padding-block: 5.5rem;
+    }
+
+    .evidence-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
