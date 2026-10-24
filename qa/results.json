@@ -1,0 +1,577 @@
+{
+  "baseURL": "http://127.0.0.1:4321",
+  "routes": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/",
+      "title": "Dr. Zhao Tang — Software Engineer, Data & AI Systems",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 5,
+      "images": 5,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/clickstream/",
+      "title": "Clickstream — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/clickstream/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 3,
+      "images": 3,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/graphatlas/",
+      "title": "GraphAtlas — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/graphatlas/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        }
+      ],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/nl2sqlagent/",
+      "title": "NL2SQLAgent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nl2sqlagent/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 1,
+      "images": 1,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/nanotrack/",
+      "title": "nanotrack — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nanotrack/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 3,
+      "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/404.html",
+      "title": "Page not found — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/404/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [],
+      "robots": "noindex, nofollow"
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/",
+      "title": "Dr. Zhao Tang — Software Engineer, Data & AI Systems",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 5,
+      "images": 5,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/clickstream/",
+      "title": "Clickstream — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/clickstream/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 3,
+      "images": 3,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/graphatlas/",
+      "title": "GraphAtlas — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/graphatlas/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        }
+      ],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/nl2sqlagent/",
+      "title": "NL2SQLAgent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nl2sqlagent/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 1,
+      "images": 1,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/nanotrack/",
+      "title": "nanotrack — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nanotrack/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 3,
+      "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/404.html",
+      "title": "Page not found — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/404/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [],
+      "robots": "noindex, nofollow"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "title": "Dr. Zhao Tang — Software Engineer, Data & AI Systems",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 5,
+      "images": 5,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/clickstream/",
+      "title": "Clickstream — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/clickstream/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 3,
+      "images": 3,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/graphatlas/",
+      "title": "GraphAtlas — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/graphatlas/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        },
+        {
+          "autoplay": false,
+          "controls": true,
+          "preload": "none",
+          "poster": true
+        }
+      ],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/nl2sqlagent/",
+      "title": "NL2SQLAgent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nl2sqlagent/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 1,
+      "images": 1,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/nanotrack/",
+      "title": "nanotrack — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/nanotrack/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 3,
+      "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/404.html",
+      "title": "Page not found — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/404/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "avifImages": 0,
+      "images": 0,
+      "videos": [],
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "links": [
+    {
+      "source": "/",
+      "href": "/",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "source": "/",
+      "href": "/resume/Zhao_Tang_Resume_DataAI_2026-10-21.pdf",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "source": "/",
+      "href": "/work/clickstream/",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "source": "/",
+      "href": "/work/graphatlas/",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "source": "/",
+      "href": "/work/nl2sqlagent/",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "source": "/",
+      "href": "/work/nanotrack/",
+      "status": 200,
+      "contentType": "text/html"
+    }
+  ],
+  "assets": [
+    {
+      "source": "/",
+      "href": "/assets/portfolio/avatar/zhao-tang-portrait-400.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo02-poster-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nanotrack/tracking-report-10k-preview-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo01-poster.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/media/graphatlas-demo01.mp4",
+      "status": 200,
+      "contentType": "video/mp4"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo02-poster.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/media/graphatlas-demo02.mp4",
+      "status": 200,
+      "contentType": "video/mp4"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo03-poster.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/graphatlas/",
+      "href": "/assets/portfolio/projects/graphatlas/media/graphatlas-demo03.mp4",
+      "status": 200,
+      "contentType": "video/mp4"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/tracking-overlay.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    }
+  ],
+  "console": [],
+  "accessibility": {
+    "videos": [
+      {
+        "autoplay": false,
+        "controls": true,
+        "preload": "none",
+        "poster": true
+      },
+      {
+        "autoplay": false,
+        "controls": true,
+        "preload": "none",
+        "poster": true
+      },
+      {
+        "autoplay": false,
+        "controls": true,
+        "preload": "none",
+        "poster": true
+      }
+    ],
+    "focusOrder": [
+      {
+        "tag": "A",
+        "text": "Skip to content",
+        "href": "#main",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "ZTPortfolio",
+        "href": "/",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "Work",
+        "href": "/#work",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "Experience",
+        "href": "/#experience",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "About",
+        "href": "/#about",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "Research",
+        "href": "/#research",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      },
+      {
+        "tag": "A",
+        "text": "Contact",
+        "href": "/#contact",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid"
+      }
+    ],
+    "mobileMenu": {
+      "menuOpen": true,
+      "menuClosed": true
+    },
+    "reducedMotion": {
+      "mediaMatches": true,
+      "heroAnimation": "none",
+      "revealOpacity": "1",
+      "revealTransform": "none"
+    }
+  },
+  "screenshots": [
+    "screenshots/home-1440.png",
+    "screenshots/home-768.png",
+    "screenshots/home-390.png"
+  ],
+  "failures": [],
+  "passed": true
+}
