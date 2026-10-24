@@ -92,7 +92,7 @@ Secondary CTA:
 | `100M+` | TurboTax and QuickBooks users supported by Intuit data products |
 | `40%` | Lower MTTR through distributed tracing and root-cause analysis |
 | `0.840` | Hybrid Hit@5 on GraphAtlas's 50-question benchmark |
-| `12` | Peer-reviewed publications supported by the research methods |
+| `6` | Peer-reviewed publications, plus conference posters and presentations |
 
 ### Selected work introduction
 
@@ -211,7 +211,7 @@ Summary:
 Visible metrics:
 
 - `15 h → 30 min`
-- `12 papers`
+- `6 papers`
 - `10k-frame run`
 
 Stack line:
@@ -377,7 +377,7 @@ Boundary:
 #### Evidence
 
 - `Per-experiment processing time reduced from 15 hours to 30 minutes in the original cluster workflow.`
-- `Methods and datasets support 12 peer-reviewed publications.`
+- `Methods and datasets support 6 peer-reviewed publications, plus additional conference posters and presentations.`
 - `Generated and validated a 10,000-frame synthetic single-molecule run with anisotropic diffusion.`
 - `Automated validation reached greater than 99% data consistency in the research workflow.`
 
@@ -486,7 +486,7 @@ Bullets:
 
 - `Developed automated image-processing and optical-analysis software in Python and MATLAB.`
 - `Reduced per-experiment processing time from 15 hours to 30 minutes through cluster parallelization.`
-- `Published methods and datasets that support 12 peer-reviewed papers.`
+- `Published methods and datasets that support 6 peer-reviewed papers, with additional conference posters and presentations.`
 
 ## About
 
@@ -554,7 +554,7 @@ Heading:
 
 Copy:
 
-`My research background spans computational imaging, single-molecule tracking, machine learning, and research data infrastructure. The work produced 12 peer-reviewed publications and taught me to preserve provenance, validate methods, and make complex results reproducible.`
+`My research background spans computational imaging, single-molecule tracking, machine learning, and research data infrastructure. The work produced 6 peer-reviewed publications, along with conference posters and presentations, and taught me to preserve provenance, validate methods, and make complex results reproducible.`
 
 Research record:
 
@@ -607,7 +607,7 @@ number, add it here first with evidence.
 | F05 | Lineage scale | `100+` pipelines; approximately `1,000` tables; `~50%` less manual coordination | Data Engineer resume, Data Platform role |
 | F06 | Stateful data repair | tracking since 2020; `10M+` unique visitors; `1M+` daily sessions | Data Engineer resume, Data Platform role |
 | F07 | Batch improvement | `7 h → 15 min`; `95%` lower peak infrastructure cost | ResMed resume, Performance & Cost |
-| F08 | Publications | `12` peer-reviewed publications | Nanoparticle README; both resumes |
+| F08 | Publications | `6` peer-reviewed publications; additional conference posters/presentations | Google Scholar profile: `https://scholar.google.com/citations?user=WlAErpUAAAAJ&hl=en` |
 | F09 | Research consistency | greater than `99%` data consistency | Data Engineer resume, Research Specialist role |
 | F10 | Research speedup | `15 h → 30 min` per experiment | Nanoparticle README; both resumes |
 | F11 | Clickstream producer | `~100` events/s; `0` failed events in recorded run | `/Users/zhaotang/projects/clickstream/README.md`, Phase 1 metrics |

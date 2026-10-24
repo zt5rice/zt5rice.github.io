@@ -1,0 +1,197 @@
+---
+import { education, focusAreas, skillGroups } from "../data/profile";
+---
+
+<section id="about" class="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <div class="narrative">
+        <p class="label">03 / About</p>
+        <h2 id="about-title">I care about the part after the demo works.</h2>
+        <p>
+          Science taught me to treat measurement as part of the system. Industry
+          taught me that correctness only matters if it survives real traffic,
+          changing schemas, ambiguous definitions, and the person who gets paged
+          at 2 a.m.
+        </p>
+        <p>
+          I started in computational imaging and completed a PhD at Rice,
+          building software to extract measurable signals from complex
+          scientific data. At Intuit, I moved into real-time data platforms and
+          customer-facing data products: defining data-quality metrics,
+          stabilizing stateful pipelines, tracing production failures, and
+          aligning teams on one definition of truth.
+        </p>
+        <p>
+          Today I focus on systems where data, AI, and reliability meet:
+          streaming pipelines, retrieval and evaluation, governed natural-language
+          analytics, and the observability that keeps them operable.
+        </p>
+      </div>
+
+      <aside>
+        <div>
+          <p class="aside-label">Current focus</p>
+          <ul class="focus-list">
+            {focusAreas.map((area) => <li>{area}</li>)}
+          </ul>
+        </div>
+        <div>
+          <p class="aside-label">Education</p>
+          <ul class="education-list">
+            {education.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="skills" aria-labelledby="skills-title">
+      <div class="skills-heading">
+        <p class="label">Technical toolkit</p>
+        <h3 id="skills-title">Built across data, platforms, and AI.</h3>
+      </div>
+      <dl>
+        {
+          skillGroups.map((group) => (
+            <div>
+              <dt>{group.label}</dt>
+              <dd>{group.items.join(" · ")}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-block: 5.5rem;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 4rem;
+  }
+
+  .about-grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  h2 {
+    max-width: 12ch;
+    margin: 0.75rem 0 0;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+  }
+
+  .narrative > p:not(.label) {
+    max-width: 43rem;
+    margin: 1.3rem 0 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  aside {
+    display: grid;
+    gap: 2rem;
+    align-content: start;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .aside-label {
+    margin: 0 0 0.8rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .focus-list,
+  .education-list {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .focus-list li {
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .education-list li {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .skills {
+    display: grid;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  h3 {
+    max-width: 16ch;
+    margin: 0.7rem 0 0;
+    font-size: 1.65rem;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  dl {
+    display: grid;
+    gap: 0;
+    margin: 0;
+  }
+
+  dl > div {
+    display: grid;
+    gap: 0.4rem;
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  dt {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 48rem) {
+    .about-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+      gap: 4rem;
+    }
+
+    .skills {
+      grid-template-columns: minmax(15rem, 0.35fr) minmax(0, 0.65fr);
+      gap: 4rem;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .about {
+      padding-block: 7rem;
+      scroll-margin-top: 5.5rem;
+    }
+  }
+</style>

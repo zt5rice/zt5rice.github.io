@@ -404,7 +404,7 @@ def draw_proof_strip(canvas: Canvas, mobile=False):
         ("100M+", "USERS SUPPORTED BY INTUIT DATA PRODUCTS"),
         ("40%", "LOWER MTTR THROUGH TRACING AND RCA"),
         ("0.840", "HYBRID HIT@5 / GRAPHATLAS BENCHMARK"),
-        ("12", "PEER-REVIEWED PUBLICATIONS"),
+        ("6", "PUBLICATIONS + POSTERS / PRESENTATIONS"),
     ]
     for index, (value, label) in enumerate(metrics):
         x = 96 + index * 312
@@ -528,7 +528,7 @@ def draw_selected_work_desktop(canvas: Canvas):
         "nanotrack",
         "A scientific video-tracking pipeline rebuilt from MATLAB into a "
         "reproducible Python system with orchestration and CI.",
-        ["15 h → 30 min", "12 papers", "10k frames"],
+        ["15 h → 30 min", "6 papers", "10k frames"],
     )
 
     canvas.line([(96, 2170), (1344, 2170)], BORDER, 1)

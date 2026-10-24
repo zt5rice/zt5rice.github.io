@@ -1,0 +1,177 @@
+---
+import { experience } from "../data/profile";
+---
+
+<section id="experience" class="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <header class="section-heading">
+      <div>
+        <p class="label">02 / Experience</p>
+        <h2 id="experience-title">Where data correctness meets system reliability.</h2>
+      </div>
+      <p>
+        I have worked across real-time data platforms, customer-facing
+        measurement, production incident response, and research software. The
+        common thread is making complex systems observable, reproducible, and
+        useful to the people who depend on them.
+      </p>
+    </header>
+
+    <ol class="timeline">
+      {
+        experience.map((role) => (
+          <li>
+            <div class="timeline-meta">
+              <p class="timeline-date">{role.dates}</p>
+              <h3>{role.role}</h3>
+              <p class="timeline-company">{role.company}</p>
+              <p class="timeline-context">{role.team}</p>
+              <p class="timeline-context">{role.context}</p>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary">{role.summary}</p>
+              <ul>
+                {role.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding-block: 5.5rem;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 4rem;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+    margin-bottom: 3.5rem;
+  }
+
+  h2 {
+    max-width: 14ch;
+    margin: 0.75rem 0 0;
+    font-size: clamp(2.5rem, 8vw, 3.7rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+  }
+
+  .section-heading > p {
+    max-width: 35rem;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .timeline > li {
+    display: grid;
+    gap: 1.25rem;
+    padding-block: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .timeline > li:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-date {
+    margin: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0.55rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .timeline-company {
+    margin: 0.2rem 0 0;
+    font-size: 0.95rem;
+  }
+
+  .timeline-context {
+    margin: 0.15rem 0 0;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    line-height: 1.55;
+  }
+
+  .timeline-body {
+    max-width: 47rem;
+  }
+
+  .timeline-summary {
+    margin: 0;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .timeline-body ul {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .timeline-body li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .timeline-body li::before {
+    position: absolute;
+    top: 0.72em;
+    left: 0;
+    width: 0.38rem;
+    height: 1px;
+    background: var(--accent);
+    content: "";
+  }
+
+  @media (min-width: 48rem) {
+    .section-heading {
+      grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr);
+      gap: 3rem;
+    }
+
+    .timeline > li {
+      grid-template-columns: minmax(13rem, 0.34fr) minmax(0, 0.66fr);
+      gap: 3rem;
+      padding-block: 2.5rem;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .experience {
+      padding-block: 7rem;
+      scroll-margin-top: 5.5rem;
+    }
+  }
+</style>
