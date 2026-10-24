@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import ResponsiveImage from "./ResponsiveImage.astro";
 ---
 
 <section class="hero" aria-labelledby="hero-title">
@@ -27,13 +28,15 @@ import { site } from "../data/site";
 
     <figure class="portrait-panel">
       <div class="portrait-frame">
-        <img
+        <ResponsiveImage
           src="/assets/portfolio/avatar/zhao-tang-portrait.webp"
-          width="400"
-          height="500"
+          width={400}
+          height={500}
           alt="Portrait of Dr. Zhao Tang"
           fetchpriority="high"
           decoding="async"
+          className="portrait-image"
+          sizes="(min-width: 80rem) 28vw, (min-width: 48rem) 34vw, calc(100vw - 3rem)"
         />
         <figcaption class="portrait-caption">
           <span>Dr. Zhao Tang / San Diego</span>
@@ -208,7 +211,7 @@ import { site } from "../data/site";
     background-size: 2.75rem 2.75rem;
   }
 
-  .portrait-frame img {
+  :global(.portrait-image) {
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;

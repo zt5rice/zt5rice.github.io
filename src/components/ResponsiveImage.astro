@@ -1,0 +1,63 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  decoding?: "async" | "sync" | "auto";
+  fetchpriority?: "high" | "low" | "auto";
+  className?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = "(min-width: 48rem) 50vw, 100vw",
+  loading = "lazy",
+  decoding = "async",
+  fetchpriority = "auto",
+  className,
+} = Astro.props;
+
+const variant = (variantWidth: number, extension: string) =>
+  src.replace(/\.webp$/, `-${variantWidth}.${extension}`);
+
+const widths = [...new Set([640, 1280, width].filter((item) => item <= width))].sort(
+  (a, b) => a - b,
+);
+
+const avifSrcSet = widths
+  .map((item) => `${variant(item, "avif")} ${item}w`)
+  .join(", ");
+
+const webpSrcSet = widths
+  .map((item) => `${variant(item, "webp")} ${item}w`)
+  .join(", ");
+---
+
+<picture>
+  <source type="image/avif" srcset={avifSrcSet} sizes={sizes} />
+  <source type="image/webp" srcset={webpSrcSet} sizes={sizes} />
+  <img
+    src={src}
+    srcset={webpSrcSet}
+    sizes={sizes}
+    width={width}
+    height={height}
+    alt={alt}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+    class={className}
+  />
+</picture>
+
+<style>
+  picture {
+    display: block;
+  }
+</style>

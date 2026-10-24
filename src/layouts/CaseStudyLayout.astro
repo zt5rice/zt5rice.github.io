@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 
 import ArchitectureDiagram from "../components/ArchitectureDiagram.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import BaseLayout from "./BaseLayout.astro";
@@ -17,6 +18,9 @@ const { project } = Astro.props;
   title={`${project.title} — Case study — Dr. Zhao Tang`}
   description={project.summary}
   image={project.poster}
+  imageWidth={project.posterWidth}
+  imageHeight={project.posterHeight}
+  imageAlt={`${project.title} project preview`}
 >
   <SiteHeader />
   <main id="main">
@@ -81,8 +85,12 @@ const { project } = Astro.props;
           <h2 id="evidence-title">Measured outcomes</h2>
           <div class="evidence-grid">
             {
-              project.evidence.map((item) => (
-                <article class="evidence-card">
+              project.evidence.map((item, index) => (
+                <article
+                  class="evidence-card"
+                  data-reveal
+                  style={`--reveal-delay: ${index * 55}ms`}
+                >
                   <strong>{item.value}</strong>
                   <h3>{item.label}</h3>
                   <p>{item.detail}</p>
@@ -104,8 +112,11 @@ const { project } = Astro.props;
           <h2 id="demo-title">Product evidence</h2>
           <div class="media-grid">
             {
-              project.media.map((item) => (
-                <figure>
+              project.media.map((item, index) => (
+                <figure
+                  data-reveal
+                  style={`--reveal-delay: ${index * 55}ms`}
+                >
                   {item.type === "video" ? (
                     <video
                       controls
@@ -118,8 +129,20 @@ const { project } = Astro.props;
                       <source src={item.src} type="video/mp4" />
                       Your browser does not support embedded video.
                     </video>
+                  ) : item.responsive !== false ? (
+                    <ResponsiveImage
+                      src={item.src}
+                      width={item.width}
+                      height={item.height}
+                      alt={item.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="media-image"
+                      sizes="(min-width: 80rem) 620px, (min-width: 48rem) 48vw, calc(100vw - 3rem)"
+                    />
                   ) : (
                     <img
+                      class="media-image"
                       src={item.src}
                       width={item.width}
                       height={item.height}
@@ -411,7 +434,7 @@ const { project } = Astro.props;
     margin: 0;
   }
 
-  .media-grid img,
+  :global(.media-image),
   .media-grid video {
     width: 100%;
     height: auto;

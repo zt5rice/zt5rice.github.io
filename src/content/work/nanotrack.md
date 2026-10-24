@@ -84,6 +84,7 @@ media:
     caption: "Tracking overlay generated from a single-molecule video."
     width: 300
     height: 300
+    responsive: false
   - type: "image"
     src: "/assets/portfolio/projects/nanotrack/tracking-report-10k-preview.webp"
     alt: "Ten-thousand-frame nanotrack QC report with trajectory, MSD, MSAD, and summary panels"
