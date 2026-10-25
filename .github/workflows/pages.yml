@@ -1,0 +1,43 @@
+name: Deploy Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'zt5rice/zt5rice.github.io'
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out repository
+        run: |
+          git init .
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Node.js
+        run: |
+          export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+          source "$NVM_DIR/nvm.sh"
+          nvm install 22.23.4
+          echo "$NVM_DIR/versions/node/v22.23.4/bin" >> "$GITHUB_PATH"
+          node --version
+          npm --version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and publish gh-pages
+        run: bash scripts/deploy-gh-pages.sh --publish

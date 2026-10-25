@@ -47,6 +47,11 @@ images. The second creates the 1200x630 Open Graph image.
 
 ## Deployment
 
-Deployment remains on the existing GitHub Pages configuration until `ZHA-197`.
-Do not switch Pages to the new build before visual QA and explicit release
-approval.
+Production is published from the generated `gh-pages` branch. The first switch
+to that branch requires manual approval and a Settings change in GitHub Pages.
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for validation, release, and
+rollback steps.
+
+```bash
+npm run deploy:pages -- --dry-run
+```
