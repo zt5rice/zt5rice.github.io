@@ -92,7 +92,7 @@ Secondary CTA:
 | `100M+` | TurboTax and QuickBooks users supported by Intuit data products |
 | `40%` | Lower MTTR through distributed tracing and root-cause analysis |
 | `0.840` | Hybrid Hit@5 on GraphAtlas's 50-question benchmark |
-| `6` | Peer-reviewed publications, plus conference posters and presentations |
+| `6` | Peer-reviewed publications |
 
 ### Selected work introduction
 
@@ -377,7 +377,7 @@ Boundary:
 #### Evidence
 
 - `Per-experiment processing time reduced from 15 hours to 30 minutes in the original cluster workflow.`
-- `Methods and datasets support 6 peer-reviewed publications, plus additional conference posters and presentations.`
+- `Methods and datasets support 6 peer-reviewed publications. Conference posters and presentations are separate and are not included in this count.`
 - `Generated and validated a 10,000-frame synthetic single-molecule run with anisotropic diffusion.`
 - `Automated validation reached greater than 99% data consistency in the research workflow.`
 
@@ -486,7 +486,7 @@ Bullets:
 
 - `Developed automated image-processing and optical-analysis software in Python and MATLAB.`
 - `Reduced per-experiment processing time from 15 hours to 30 minutes through cluster parallelization.`
-- `Published methods and datasets that support 6 peer-reviewed papers, with additional conference posters and presentations.`
+- `Published methods and datasets supporting 6 peer-reviewed publications.`
 
 ## About
 
@@ -554,7 +554,7 @@ Heading:
 
 Copy:
 
-`My research background spans computational imaging, single-molecule tracking, machine learning, and research data infrastructure. The work produced 6 peer-reviewed publications, along with conference posters and presentations, and taught me to preserve provenance, validate methods, and make complex results reproducible.`
+`My research background spans computational imaging, single-molecule tracking, machine learning, and research data infrastructure. The work produced 6 peer-reviewed publications. Conference posters and presentations are listed separately and are not included in this count. The work taught me to preserve provenance, validate methods, and make complex results reproducible.`
 
 Research record:
 
@@ -607,7 +607,7 @@ number, add it here first with evidence.
 | F05 | Lineage scale | `100+` pipelines; approximately `1,000` tables; `~50%` less manual coordination | Data Engineer resume, Data Platform role |
 | F06 | Stateful data repair | tracking since 2020; `10M+` unique visitors; `1M+` daily sessions | Data Engineer resume, Data Platform role |
 | F07 | Batch improvement | `7 h → 15 min`; `95%` lower peak infrastructure cost | ResMed resume, Performance & Cost |
-| F08 | Publications | `6` peer-reviewed publications; additional conference posters/presentations | Google Scholar profile: `https://scholar.google.com/citations?user=WlAErpUAAAAJ&hl=en` |
+| F08 | Publications | `6` peer-reviewed publications; posters/presentations are separate and not included in the count | Google Scholar profile: `https://scholar.google.com/citations?user=WlAErpUAAAAJ&hl=en` |
 | F09 | Research consistency | greater than `99%` data consistency | Data Engineer resume, Research Specialist role |
 | F10 | Research speedup | `15 h → 30 min` per experiment | Nanoparticle README; both resumes |
 | F11 | Clickstream producer | `~100` events/s; `0` failed events in recorded run | `/Users/zhaotang/projects/clickstream/README.md`, Phase 1 metrics |
@@ -630,6 +630,9 @@ number, add it here first with evidence.
 - Do not publish the phone number.
 - Do not publish the legacy Rice email address from older resume versions.
 - Do not call Clickstream, GraphAtlas, or NL2SQLAgent production systems.
+- Do not phrase the publication count as `6 publications plus posters and
+  presentations`. State exactly `6 peer-reviewed publications`; if those
+  activities are mentioned, say they are separate and excluded from the count.
 - Do not imply that synthetic corporate entities or benchmark questions are real customer data.
 - Do not say the research publications were produced by the 2026 nanotrack Python implementation.
 - Do not state that the portfolio site is “available for opportunities” unless Zhao Tang explicitly adds that status.
@@ -642,5 +645,7 @@ number, add it here first with evidence.
 - [x] Positioning matches the approved `Data & AI Systems` direction.
 - [x] Contact details match approved values.
 - [x] Every public metric maps to F01–F24.
+- [x] Publication copy states exactly 6 peer-reviewed publications and excludes
+  posters/presentations from the count.
 - [x] Portfolio/demo boundaries are explicit.
 - [x] CTA labels are consistent and short.
