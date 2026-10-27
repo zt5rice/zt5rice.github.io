@@ -388,7 +388,7 @@ def draw_proof_strip(canvas: Canvas, mobile=False):
             ("100M+", "users supported"),
             ("40%", "lower MTTR"),
             ("0.840", "Hybrid Hit@5"),
-            ("12", "publications"),
+            ("6", "peer-reviewed publications"),
         ]
         for index, (value, label) in enumerate(metrics):
             col = index % 2
@@ -404,7 +404,7 @@ def draw_proof_strip(canvas: Canvas, mobile=False):
         ("100M+", "USERS SUPPORTED BY INTUIT DATA PRODUCTS"),
         ("40%", "LOWER MTTR THROUGH TRACING AND RCA"),
         ("0.840", "HYBRID HIT@5 / GRAPHATLAS BENCHMARK"),
-        ("6", "PUBLICATIONS + POSTERS / PRESENTATIONS"),
+        ("6", "PEER-REVIEWED PUBLICATIONS"),
     ]
     for index, (value, label) in enumerate(metrics):
         x = 96 + index * 312

@@ -1,6 +1,6 @@
 # Portfolio v2 QA Report
 
-Date: 2026-10-24
+Date: 2026-10-24; publication-copy follow-up: 2026-10-26
 
 Preview URL: `http://127.0.0.1:4321`
 
@@ -93,8 +93,9 @@ Desktop metrics:
 ## Manual content review
 
 - Positioning is consistently `Software Engineer · Data & AI Systems`.
-- Publication wording is consistently 6 peer-reviewed publications, with posters
-  and presentations excluded from the count.
+- The homepage presents `6` under `Peer-reviewed publications` only. Research
+  copy explicitly notes that posters and presentations are separate and excluded
+  from that count.
 - Public resume is the sanitized two-page Data & AI Systems version.
 - Clickstream, GraphAtlas, and NL2SQLAgent remain clearly identified as
   portfolio systems rather than production traffic.
@@ -104,7 +105,8 @@ Desktop metrics:
 
 ## Known issues and boundaries
 
-- GitHub Pages still serves the legacy site until `ZHA-197`.
+- The publication-count clarification awaits review and deployment; production
+  continues to show the previous wording until that release completes.
 - The independent nanotrack README publication correction remains tracked in
   `ZHA-198` and is not part of this website PR.
 - No custom domain is in scope.
@@ -123,5 +125,6 @@ Desktop metrics:
 - [x] Privacy and publication-fact review
 - [x] Lighthouse targets
 - [ ] Zhao Tang reviews the preview
-- [ ] Platform ticket `ZHA-196` is complete
-- [ ] Production release in `ZHA-197` is manually approved
+- [x] Platform ticket `ZHA-196` is complete
+- [x] Production release in `ZHA-197` is approved and deployed
+- [ ] Publication-count clarification is reviewed and deployed
