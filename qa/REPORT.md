@@ -35,6 +35,10 @@ Results file: `qa/results.json`
 - Internal links checked: 6 unique URLs; all returned HTTP 200.
 - Media assets checked: 16 unique resources; all returned HTTP 200.
 - Responsive page overflow: none.
+- Hero name renders `Dr. Zhao Tang` on one line at 390 px, 768 px, and 1440 px;
+  narrower viewports retain a natural wrapped fallback.
+- Positioning line `Software Engineer · Data & AI Systems` also renders on one
+  line at all three tested viewport widths.
 - AVIF sources selected in Chromium with WebP fallbacks available.
 - GraphAtlas videos:
   - 3 players

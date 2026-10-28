@@ -7,10 +7,7 @@ import ResponsiveImage from "./ResponsiveImage.astro";
   <div class="hero-grid container">
     <div class="hero-copy">
       <p class="label hero-eyebrow">San Diego / California</p>
-      <h1 id="hero-title">
-        <span>Dr. Zhao</span>
-        <span>Tang</span>
-      </h1>
+      <h1 id="hero-title">Dr. Zhao Tang</h1>
       <p class="discipline">Software Engineer · Data &amp; AI Systems</p>
       <p class="lede">
         I build reliable data platforms, measurable AI products, and
@@ -106,15 +103,15 @@ import ResponsiveImage from "./ResponsiveImage.astro";
   }
 
   h1 {
-    display: grid;
     margin: 1.25rem 0 0;
-    font-size: clamp(4rem, 17vw, 5.2rem);
+    font-size: clamp(3.25rem, 15vw, 5rem);
     font-weight: 700;
     letter-spacing: -0.07em;
     line-height: 0.9;
+    text-wrap: balance;
   }
 
-  h1 span:last-child::after {
+  h1::after {
     display: block;
     width: 4.25rem;
     height: 0.4rem;
@@ -125,12 +122,13 @@ import ResponsiveImage from "./ResponsiveImage.astro";
   }
 
   .discipline {
-    max-width: 31rem;
+    max-width: none;
     margin: 1.55rem 0 0;
-    font-size: clamp(1.55rem, 6.5vw, 2rem);
+    font-size: clamp(1rem, 2.4vw, 1.75rem);
     font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1.15;
+    white-space: nowrap;
   }
 
   .lede {
@@ -281,7 +279,8 @@ import ResponsiveImage from "./ResponsiveImage.astro";
     }
 
     h1 {
-      font-size: clamp(5.7rem, 10vw, 7rem);
+      font-size: clamp(3.5rem, 7vw, 5rem);
+      white-space: nowrap;
     }
 
     .portrait-panel {

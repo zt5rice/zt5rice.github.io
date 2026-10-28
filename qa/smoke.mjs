@@ -98,28 +98,48 @@ for (const viewport of viewports) {
   for (const route of routes) {
     await loadPage(page, route);
 
-    const metrics = await page.evaluate(() => ({
-      title: document.title,
-      h1Count: document.querySelectorAll("h1").length,
-      canonical:
-        document.querySelector('link[rel="canonical"]')?.getAttribute("href") ??
-        null,
-      scrollWidth: document.documentElement.scrollWidth,
-      innerWidth: window.innerWidth,
-      avifImages: [...document.querySelectorAll("picture img")].filter((img) =>
-        img.currentSrc.endsWith(".avif"),
-      ).length,
-      images: document.querySelectorAll("img").length,
-      videos: [...document.querySelectorAll("video")].map((video) => ({
-        autoplay: video.autoplay,
-        controls: video.controls,
-        preload: video.preload,
-        poster: Boolean(video.poster),
-      })),
-      robots:
-        document.querySelector('meta[name="robots"]')?.getAttribute("content") ??
-        null,
-    }));
+    const metrics = await page.evaluate(() => {
+      const heroTitle = document.querySelector("#hero-title");
+      const discipline = document.querySelector(".discipline");
+      let heroNameLines = null;
+      let disciplineLines = null;
+
+      if (heroTitle) {
+        const nameRange = document.createRange();
+        nameRange.selectNodeContents(heroTitle);
+        heroNameLines = nameRange.getClientRects().length;
+      }
+      if (discipline) {
+        const disciplineRange = document.createRange();
+        disciplineRange.selectNodeContents(discipline);
+        disciplineLines = disciplineRange.getClientRects().length;
+      }
+
+      return {
+        title: document.title,
+        h1Count: document.querySelectorAll("h1").length,
+        canonical:
+          document.querySelector('link[rel="canonical"]')?.getAttribute("href") ??
+          null,
+        scrollWidth: document.documentElement.scrollWidth,
+        innerWidth: window.innerWidth,
+        heroNameLines,
+        disciplineLines,
+        avifImages: [...document.querySelectorAll("picture img")].filter((img) =>
+          img.currentSrc.endsWith(".avif"),
+        ).length,
+        images: document.querySelectorAll("img").length,
+        videos: [...document.querySelectorAll("video")].map((video) => ({
+          autoplay: video.autoplay,
+          controls: video.controls,
+          preload: video.preload,
+          poster: Boolean(video.poster),
+        })),
+        robots:
+          document.querySelector('meta[name="robots"]')?.getAttribute("content") ??
+          null,
+      };
+    });
 
     if (metrics.h1Count !== 1) {
       failures.push({ type: "h1-count", viewport, route, ...metrics });
@@ -129,6 +149,12 @@ for (const viewport of viewports) {
     }
     if (metrics.scrollWidth > metrics.innerWidth) {
       failures.push({ type: "horizontal-overflow", viewport, route, ...metrics });
+    }
+    if (route === "/" && viewport.width >= 390 && metrics.heroNameLines !== 1) {
+      failures.push({ type: "hero-name-wrap", viewport, ...metrics });
+    }
+    if (route === "/" && viewport.width >= 390 && metrics.disciplineLines !== 1) {
+      failures.push({ type: "hero-discipline-wrap", viewport, ...metrics });
     }
     if (route === "/404.html" && !metrics.robots?.includes("noindex")) {
       failures.push({ type: "404-noindex", viewport, route, robots: metrics.robots });
