@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Fit Research Agent — evidence boards</title>
+    <style>
+      :root {
+        --bg: #090b0d;
+        --panel: #111518;
+        --panel-raised: #171c20;
+        --text: #f2eee6;
+        --muted: #9aa1a5;
+        --dim: #697177;
+        --accent: #ff6a3d;
+        --green: #78f0a6;
+        --border: #2b3034;
+        --mono: "Menlo", "SFMono-Regular", monospace;
+        --display: "Avenir Next", "Helvetica Neue", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--display);
+      }
+
+      .artboard {
+        position: relative;
+        width: 1600px;
+        height: 900px;
+        overflow: hidden;
+        background:
+          linear-gradient(rgba(98, 108, 112, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(98, 108, 112, 0.045) 1px, transparent 1px),
+          radial-gradient(circle at 90% 10%, rgba(255, 106, 61, 0.09), transparent 34%),
+          var(--bg);
+        background-size:
+          48px 48px,
+          48px 48px,
+          auto,
+          auto;
+      }
+
+      .artboard + .artboard {
+        border-top: 20px solid #000;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        padding: 0 64px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(9, 11, 13, 0.88);
+      }
+
+      .brand,
+      .label,
+      .chip,
+      .metric-label,
+      .node small,
+      .mono {
+        font-family: var(--mono);
+      }
+
+      .brand {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .topbar-right {
+        display: flex;
+        gap: 10px;
+      }
+
+      .chip {
+        padding: 7px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .chip.accent {
+        border-color: rgba(255, 106, 61, 0.45);
+        color: var(--accent);
+      }
+
+      .chip.green {
+        border-color: rgba(120, 240, 166, 0.38);
+        color: var(--green);
+      }
+
+      .overview-main {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 64px;
+        padding: 48px 64px 150px;
+      }
+
+      .eyebrow,
+      .label {
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .overview h1 {
+        max-width: 780px;
+        margin-top: 18px;
+        font-size: 84px;
+        font-weight: 650;
+        letter-spacing: -0.065em;
+        line-height: 0.92;
+      }
+
+      .overview h1 span {
+        color: var(--accent);
+      }
+
+      .lead {
+        max-width: 730px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 23px;
+        line-height: 1.45;
+      }
+
+      .jobs {
+        display: grid;
+        gap: 10px;
+        margin-top: 34px;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 116px 1fr auto;
+        align-items: center;
+        min-height: 68px;
+        padding: 0 18px;
+        border: 1px solid var(--border);
+        background: rgba(17, 21, 24, 0.9);
+      }
+
+      .verdict {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .verdict.apply {
+        color: var(--green);
+      }
+
+      .verdict.investigate {
+        color: #ffd37a;
+      }
+
+      .verdict.skip {
+        color: var(--accent);
+      }
+
+      .job strong {
+        font-size: 19px;
+        font-weight: 550;
+      }
+
+      .job small {
+        display: block;
+        margin-top: 5px;
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 10px;
+      }
+
+      .score {
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .score span {
+        color: var(--dim);
+        font-size: 10px;
+        font-weight: 400;
+      }
+
+      .control-panel {
+        align-self: end;
+        padding: 24px;
+        border: 1px solid var(--border);
+        background: rgba(15, 18, 21, 0.92);
+      }
+
+      .panel-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .panel-heading h2 {
+        margin-top: 7px;
+        font-size: 28px;
+        font-weight: 550;
+        letter-spacing: -0.035em;
+      }
+
+      .panel-heading span {
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 10px;
+      }
+
+      .flow {
+        display: grid;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .node {
+        display: grid;
+        grid-template-columns: 36px 1fr auto;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 12px;
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        background: var(--panel-raised);
+      }
+
+      .node b {
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: 400;
+      }
+
+      .node strong {
+        font-size: 15px;
+        font-weight: 550;
+      }
+
+      .node small {
+        color: var(--muted);
+        font-size: 9px;
+      }
+
+      .support {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 16px;
+      }
+
+      .support span {
+        padding: 6px 9px;
+        border: 1px solid var(--border);
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 9px;
+        text-transform: uppercase;
+      }
+
+      .metrics {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        min-height: 118px;
+        border-top: 1px solid var(--border);
+        background: rgba(9, 11, 13, 0.94);
+      }
+
+      .metric {
+        display: grid;
+        align-content: center;
+        gap: 6px;
+        padding: 20px 30px;
+      }
+
+      .metric + .metric {
+        border-left: 1px solid var(--border);
+      }
+
+      .metric strong {
+        font-family: var(--mono);
+        font-size: 31px;
+        letter-spacing: -0.05em;
+      }
+
+      .metric strong.accent {
+        color: var(--accent);
+      }
+
+      .metric strong.green {
+        color: var(--green);
+      }
+
+      .metric-label {
+        color: var(--dim);
+        font-size: 9px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .audit {
+        padding: 50px 64px 60px;
+      }
+
+      .audit-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+      }
+
+      .audit h2 {
+        max-width: 820px;
+        margin-top: 12px;
+        font-size: 64px;
+        font-weight: 650;
+        letter-spacing: -0.055em;
+        line-height: 0.96;
+      }
+
+      .audit-head p:last-child {
+        max-width: 440px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: right;
+      }
+
+      .audit-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 22px;
+        margin-top: 34px;
+      }
+
+      .report-card,
+      .manifest-card {
+        border: 1px solid var(--border);
+        background: rgba(15, 18, 21, 0.94);
+      }
+
+      .report-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 88px;
+        padding: 18px 22px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .report-title p {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .report-title h3 {
+        margin-top: 7px;
+        font-size: 25px;
+        font-weight: 550;
+      }
+
+      .score-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .score-block strong {
+        font-family: var(--mono);
+        font-size: 44px;
+        letter-spacing: -0.07em;
+      }
+
+      .score-block span {
+        color: var(--green);
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .report-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 22px;
+      }
+
+      .breakdown {
+        display: grid;
+        gap: 12px;
+      }
+
+      .dimension {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 6px 12px;
+      }
+
+      .dimension span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .dimension b {
+        font-family: var(--mono);
+        font-size: 11px;
+      }
+
+      .bar {
+        grid-column: 1 / -1;
+        height: 5px;
+        background: #242a2e;
+      }
+
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--accent);
+      }
+
+      .evidence-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .quote {
+        padding: 12px;
+        border-left: 2px solid var(--green);
+        background: #0d1113;
+      }
+
+      .quote small {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--green);
+        font-family: var(--mono);
+        font-size: 8px;
+        text-transform: uppercase;
+      }
+
+      .quote p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .manifest-card {
+        display: grid;
+        align-content: start;
+        gap: 16px;
+        padding: 22px;
+      }
+
+      .manifest-card h3 {
+        font-size: 22px;
+        font-weight: 550;
+      }
+
+      .manifest-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .manifest-row span {
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 9px;
+        text-transform: uppercase;
+      }
+
+      .manifest-row strong {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .review-box {
+        margin-top: 2px;
+        padding: 16px;
+        border: 1px solid rgba(255, 106, 61, 0.42);
+        background: rgba(255, 106, 61, 0.06);
+      }
+
+      .review-box strong {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .review-box p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .boundary {
+        position: absolute;
+        right: 64px;
+        bottom: 32px;
+        left: 64px;
+        display: flex;
+        justify-content: space-between;
+        color: var(--dim);
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="artboard overview" id="overview" aria-label="Job Fit Research Agent overview">
+      <header class="topbar">
+        <span class="brand">JOB FIT / RESEARCH AGENT</span>
+        <div class="topbar-right">
+          <span class="chip">OFFLINE EVALUATION</span>
+          <span class="chip green">40 TESTS</span>
+          <span class="chip accent">SYNTHETIC DATA</span>
+        </div>
+      </header>
+
+      <div class="overview-main">
+        <div>
+          <p class="eyebrow">Controlled AI research agent</p>
+          <h1>Evidence before <span>recommendations.</span></h1>
+          <p class="lead">
+            DeepAgents plans and extracts. Deterministic Python validates the
+            evidence, owns the score, and routes uncertain cases to humans.
+          </p>
+
+          <div class="jobs">
+            <div class="job">
+              <span class="verdict apply">Apply</span>
+              <div>
+                <strong>Senior AI Platform Engineer</strong>
+                <small>Synthetic Employer A · evidence coverage 100%</small>
+              </div>
+              <div class="score">100 <span>/ 100</span></div>
+            </div>
+            <div class="job">
+              <span class="verdict investigate">Investigate</span>
+              <div>
+                <strong>Applied AI Engineer</strong>
+                <small>Authorization unclear · review required</small>
+              </div>
+              <div class="score">66 <span>/ 100</span></div>
+            </div>
+            <div class="job">
+              <span class="verdict skip">Skip</span>
+              <div>
+                <strong>Embedded Software Engineer</strong>
+                <small>Sponsorship + clearance blocker · review required</small>
+              </div>
+              <div class="score">30 <span>/ 100</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="control-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="label">Control plane</p>
+              <h2>Model extraction, deterministic judgment.</h2>
+            </div>
+            <span>v0.1.0</span>
+          </div>
+
+          <div class="flow">
+            <div class="node">
+              <b>01</b><strong>Profile + local jobs</strong><small>untrusted input</small>
+            </div>
+            <div class="node">
+              <b>02</b><strong>DeepAgents planner</strong><small>plans + delegates</small>
+            </div>
+            <div class="node">
+              <b>03</b><strong>Typed extraction tools</strong><small>quotes + line spans</small>
+            </div>
+            <div class="node">
+              <b>04</b><strong>Evidence validation</strong><small>schema + injection checks</small>
+            </div>
+            <div class="node">
+              <b>05</b><strong>Deterministic rubric</strong><small>fixed 30/30/15/15/10</small>
+            </div>
+            <div class="node">
+              <b>06</b><strong>Review gate + reports</strong><small>JSON · Markdown · manifest</small>
+            </div>
+          </div>
+
+          <div class="support">
+            <span>Filesystem sandbox</span>
+            <span>SHA-256 inputs</span>
+            <span>Prompt-injection flag</span>
+            <span>Human review</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <strong class="green">15 / 15</strong>
+          <span class="metric-label">synthetic recommendation agreement</span>
+        </div>
+        <div class="metric">
+          <strong>100%</strong>
+          <span class="metric-label">mean evidence coverage</span>
+        </div>
+        <div class="metric">
+          <strong>0</strong>
+          <span class="metric-label">unsupported claims</span>
+        </div>
+        <div class="metric">
+          <strong class="accent">0</strong>
+          <span class="metric-label">hard-blocker false applies</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="artboard audit" id="audit" aria-label="Job Fit Research Agent evidence audit">
+      <div class="audit-head">
+        <div>
+          <p class="label">Evidence audit</p>
+          <h2>Every recommendation carries its source.</h2>
+        </div>
+        <p>
+          The model can propose structure. It cannot supply the final score,
+          fabricate quotes, or bypass the human-review gate.
+        </p>
+      </div>
+
+      <div class="audit-grid">
+        <article class="report-card">
+          <header class="report-head">
+            <div class="report-title">
+              <p>Sample assessment / synthetic job</p>
+              <h3>Senior AI Platform Engineer</h3>
+            </div>
+            <div class="score-block">
+              <strong>100</strong>
+              <span>APPLY</span>
+            </div>
+          </header>
+
+          <div class="report-body">
+            <div class="breakdown">
+              <div class="dimension">
+                <span>Role and domain</span><b>30 / 30</b>
+                <div class="bar"><i style="width: 100%"></i></div>
+              </div>
+              <div class="dimension">
+                <span>Must-have skills</span><b>30 / 30</b>
+                <div class="bar"><i style="width: 100%"></i></div>
+              </div>
+              <div class="dimension">
+                <span>Seniority</span><b>15 / 15</b>
+                <div class="bar"><i style="width: 100%"></i></div>
+              </div>
+              <div class="dimension">
+                <span>Location and authorization</span><b>15 / 15</b>
+                <div class="bar"><i style="width: 100%"></i></div>
+              </div>
+              <div class="dimension">
+                <span>Preferences</span><b>10 / 10</b>
+                <div class="bar"><i style="width: 100%"></i></div>
+              </div>
+              <div class="review-box">
+                <strong>Human review · not required</strong>
+                <p>
+                  Clear evidence and no hard blocker. The recommendation remains
+                  a research aid, not an application decision.
+                </p>
+              </div>
+            </div>
+
+            <div class="evidence-list">
+              <div class="quote">
+                <small>ev_015 · must_have · line 22</small>
+                <p>5+ years of software engineering experience, including production Python.</p>
+              </div>
+              <div class="quote">
+                <small>ev_016 · must_have · line 23</small>
+                <p>Strong experience with LangChain or a comparable LLM application framework.</p>
+              </div>
+              <div class="quote">
+                <small>ev_017 · must_have · line 24</small>
+                <p>Experience building deterministic evaluation and regression checks for AI systems.</p>
+              </div>
+              <div class="quote">
+                <small>ev_018 · must_have · line 25</small>
+                <p>Hands-on experience with FastAPI, PostgreSQL, and containerized services.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="manifest-card">
+          <p class="label">Run manifest</p>
+          <h3>Inspectable by default.</h3>
+          <div class="manifest-row"><span>Mode</span><strong>offline / deterministic</strong></div>
+          <div class="manifest-row"><span>Evidence coverage</span><strong>100%</strong></div>
+          <div class="manifest-row"><span>Unsupported claims</span><strong>0</strong></div>
+          <div class="manifest-row"><span>Rubric</span><strong>rubric-v1</strong></div>
+          <div class="manifest-row"><span>Input hashes</span><strong>SHA-256</strong></div>
+          <div class="manifest-row"><span>Automated applications</span><strong>none</strong></div>
+          <div class="review-box">
+            <strong>Evaluation gate</strong>
+            <p>
+              15 labeled synthetic cases. A hard-blocker apply, low evidence
+              coverage, or unsupported claim fails the CI run.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="boundary">
+        <span>Sanitized sample outputs · synthetic fixtures · no real job data</span>
+        <span>Research prototype · not production software · human review required</span>
+      </div>
+    </section>
+  </body>
+</html>

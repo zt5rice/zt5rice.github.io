@@ -2,7 +2,7 @@ export const site = {
   url: "https://zt5rice.github.io",
   title: "Dr. Zhao Tang — Software Engineer, Data & AI Systems",
   description:
-    "Dr. Zhao Tang builds reliable data platforms, measurable AI products, and production systems. Explore selected work across streaming data, GraphRAG, natural-language analytics, and scientific computing.",
+    "Dr. Zhao Tang builds reliable data platforms, measurable AI products, and production systems. Explore selected work across streaming data, GraphRAG, natural-language analytics, controlled AI agents, and scientific computing.",
   ogImage: "/og/og-portfolio.png",
   ogImageWidth: 1200,
   ogImageHeight: 630,

@@ -114,6 +114,7 @@ export const skillGroups = [
     items: [
       "pgvector",
       "RAG / GraphRAG",
+      "DeepAgents",
       "Reciprocal Rank Fusion",
       "LLM evaluation",
       "LangChain",

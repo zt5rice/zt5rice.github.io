@@ -17,6 +17,7 @@ const routes = [
   "/work/graphatlas/",
   "/work/nl2sqlagent/",
   "/work/nanotrack/",
+  "/work/job-fit-research-agent/",
   "/404.html",
 ];
 
@@ -226,6 +227,13 @@ for (const route of routes) {
       if (video.currentSrc) urls.push(video.currentSrc);
       video.querySelectorAll("source").forEach((source) => {
         if (source.src) urls.push(source.src);
+      });
+    });
+    document.querySelectorAll("img[srcset], source[srcset]").forEach((element) => {
+      const candidates = element.getAttribute("srcset") ?? "";
+      candidates.split(",").forEach((candidate) => {
+        const url = candidate.trim().split(/\s+/)[0];
+        if (url) urls.push(new URL(url, location.href).href);
       });
     });
     return [...new Set(urls)];

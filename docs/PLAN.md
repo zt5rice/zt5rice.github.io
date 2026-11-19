@@ -18,11 +18,12 @@ Rebuild `zt5rice.github.io` and the GitHub profile around a consistent **Data & 
 1. Sticky navigation and accessible mobile menu.
 2. Hero with portrait, positioning, and primary calls to action.
 3. Proof strip with source-backed outcomes.
-4. Four selected projects:
+4. Five selected projects:
    - Clickstream — real-time data platform.
    - GraphAtlas — multi-engine GraphRAG platform.
    - NL2SQLAgent — governed natural-language analytics.
    - nanotrack — research data infrastructure and scientific computing.
+   - Job Fit Research Agent — controlled DeepAgents research with deterministic scoring.
 5. Experience, About, Research, Contact, and public resume download.
 6. Dedicated case-study pages with architecture, implementation, evidence, demo media, limitations, and repository links.
 7. Custom 404 page.
