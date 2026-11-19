@@ -86,6 +86,7 @@ required_files=(
   "work/graphatlas/index.html"
   "work/nl2sqlagent/index.html"
   "work/nanotrack/index.html"
+  "work/job-fit-research-agent/index.html"
 )
 
 for path in "${required_files[@]}"; do

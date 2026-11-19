@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-21",
+  "reviewed": "2026-11-19",
   "public_root": "public/assets/portfolio",
   "files": [
     {
@@ -130,6 +130,22 @@
       "sha256": "4e036932abc2727dcf295530fa3a966cb8b839884bd0702f87d4110a3a0751dc",
       "width": 1473,
       "height": 898,
+      "frames": 1
+    },
+    {
+      "path": "projects/job-fit/overview.webp",
+      "bytes": 63164,
+      "sha256": "bed2b3f4789a75ea5c4ac7c598bc2a64f8203c1d2f9b18ce07e923f932449309",
+      "width": 1600,
+      "height": 900,
+      "frames": 1
+    },
+    {
+      "path": "projects/job-fit/audit.webp",
+      "bytes": 59890,
+      "sha256": "e6ec20f9c2ef1494cd86001a462ed0b0b197508563ea5a854bbf6e9cb6a7c615",
+      "width": 1600,
+      "height": 900,
       "frames": 1
     }
   ]

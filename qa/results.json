@@ -14,8 +14,8 @@
       "innerWidth": 1440,
       "heroNameLines": 1,
       "disciplineLines": 1,
-      "avifImages": 5,
-      "images": 5,
+      "avifImages": 6,
+      "images": 6,
       "videos": [],
       "robots": null
     },
@@ -107,6 +107,24 @@
       "disciplineLines": null,
       "avifImages": 3,
       "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/job-fit-research-agent/",
+      "title": "Job Fit Research Agent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/job-fit-research-agent/",
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "heroNameLines": null,
+      "disciplineLines": null,
+      "avifImages": 2,
+      "images": 2,
       "videos": [],
       "robots": null
     },
@@ -141,8 +159,8 @@
       "innerWidth": 768,
       "heroNameLines": 1,
       "disciplineLines": 1,
-      "avifImages": 5,
-      "images": 5,
+      "avifImages": 6,
+      "images": 6,
       "videos": [],
       "robots": null
     },
@@ -234,6 +252,24 @@
       "disciplineLines": null,
       "avifImages": 3,
       "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/job-fit-research-agent/",
+      "title": "Job Fit Research Agent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/job-fit-research-agent/",
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "heroNameLines": null,
+      "disciplineLines": null,
+      "avifImages": 2,
+      "images": 2,
       "videos": [],
       "robots": null
     },
@@ -268,8 +304,8 @@
       "innerWidth": 390,
       "heroNameLines": 1,
       "disciplineLines": 1,
-      "avifImages": 5,
-      "images": 5,
+      "avifImages": 6,
+      "images": 6,
       "videos": [],
       "robots": null
     },
@@ -361,6 +397,24 @@
       "disciplineLines": null,
       "avifImages": 3,
       "images": 4,
+      "videos": [],
+      "robots": null
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/job-fit-research-agent/",
+      "title": "Job Fit Research Agent — Case study — Dr. Zhao Tang",
+      "h1Count": 1,
+      "canonical": "https://zt5rice.github.io/work/job-fit-research-agent/",
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "heroNameLines": null,
+      "disciplineLines": null,
+      "avifImages": 2,
+      "images": 2,
       "videos": [],
       "robots": null
     },
@@ -419,6 +473,12 @@
       "href": "/work/nanotrack/",
       "status": 200,
       "contentType": "text/html"
+    },
+    {
+      "source": "/",
+      "href": "/work/job-fit-research-agent/",
+      "status": 200,
+      "contentType": "text/html"
     }
   ],
   "assets": [
@@ -453,6 +513,144 @@
       "contentType": "image/avif"
     },
     {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/avatar/zhao-tang-portrait-400.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-1600.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/clickstream/grafana-dashboard-1600.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo02-poster-1154.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo02-poster-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/graphatlas/graphatlas-demo02-poster-1154.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-1473.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nl2sql/overview-1473.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nanotrack/tracking-report-10k-preview-1240.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nanotrack/tracking-report-10k-preview-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/nanotrack/tracking-report-10k-preview-1240.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-1600.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/",
+      "href": "/assets/portfolio/projects/job-fit/overview-1600.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
       "source": "/work/clickstream/",
       "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-640.avif",
       "status": 200,
@@ -463,6 +661,66 @@
       "href": "/assets/portfolio/projects/clickstream/api-docs-640.avif",
       "status": 200,
       "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-1600.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/prometheus-alerts-1600.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-1600.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/clickstream/",
+      "href": "/assets/portfolio/projects/clickstream/api-docs-1600.webp",
+      "status": 200,
+      "contentType": "image/webp"
     },
     {
       "source": "/work/graphatlas/",
@@ -517,6 +775,102 @@
       "href": "/assets/portfolio/projects/nanotrack/airflow-preview-640.avif",
       "status": 200,
       "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-1430.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/grafana-preview-1430.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-1540.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/nanotrack/",
+      "href": "/assets/portfolio/projects/nanotrack/airflow-preview-1540.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-640.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-1280.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-1600.avif",
+      "status": 200,
+      "contentType": "image/avif"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-640.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-1280.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "source": "/work/job-fit-research-agent/",
+      "href": "/assets/portfolio/projects/job-fit/audit-1600.webp",
+      "status": 200,
+      "contentType": "image/webp"
     }
   ],
   "console": [],

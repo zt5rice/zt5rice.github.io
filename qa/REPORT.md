@@ -1,6 +1,6 @@
 # Portfolio v2 QA Report
 
-Date: 2026-10-24; publication-copy follow-up: 2026-10-26
+Date: 2026-10-24; follow-ups: 2026-10-26 (publication copy), 2026-11-19 (Job Fit case study)
 
 Preview URL: `http://127.0.0.1:4321`
 
@@ -11,13 +11,13 @@ Verdict: **PASS**. No release-blocking defects found.
 - `npm run check`: 0 errors, 0 warnings, 0 hints.
 - `npm run build`: passed.
 - Static routes generated: 6.
-- Homepage and four case-study routes have:
+- Homepage and five case-study routes have:
   - one `h1`
   - a unique title
   - a canonical URL
   - image alt attributes
 - All local `href`, `src`, `poster`, and `srcset` files resolve.
-- The sitemap includes the homepage and all four case-study routes.
+- The sitemap includes the homepage and all five case-study routes.
 - Initial inline JavaScript: approximately 892 bytes gzip per page.
 - No phone number, legacy email, placeholder domain, or credential markers found.
 
@@ -25,15 +25,16 @@ Verdict: **PASS**. No release-blocking defects found.
 
 Results file: `qa/results.json`
 
-- 6 routes tested at 3 viewports:
+- 7 routes tested at 3 viewports:
   - 1440 x 900
   - 768 x 1024
   - 390 x 844
-- Route-viewport checks: 18.
+- Route-viewport checks: 21.
 - Failures: 0.
 - Console errors: 0.
-- Internal links checked: 6 unique URLs; all returned HTTP 200.
-- Media assets checked: 16 unique resources; all returned HTTP 200.
+- Internal links checked: 7 unique URLs; all returned HTTP 200.
+- Media assets checked: 65 unique resources, including every responsive `srcset`
+  candidate; all returned HTTP 200.
 - Responsive page overflow: none.
 - Hero name renders `Dr. Zhao Tang` on one line at 390 px, 768 px, and 1440 px;
   narrower viewports retain a natural wrapped fallback.
@@ -109,8 +110,7 @@ Desktop metrics:
 
 ## Known issues and boundaries
 
-- The publication-count clarification awaits review and deployment; production
-  continues to show the previous wording until that release completes.
+- The Job Fit Research Agent case study awaits review and deployment.
 - The independent nanotrack README publication correction remains tracked in
   `ZHA-198` and is not part of this website PR.
 - No custom domain is in scope.
@@ -131,4 +131,5 @@ Desktop metrics:
 - [ ] Zhao Tang reviews the preview
 - [x] Platform ticket `ZHA-196` is complete
 - [x] Production release in `ZHA-197` is approved and deployed
-- [ ] Publication-count clarification is reviewed and deployed
+- [x] Publication-count clarification is reviewed and deployed
+- [ ] Job Fit Research Agent case study is reviewed and deployed

@@ -1,6 +1,6 @@
 # Portfolio Asset Manifest
 
-Last reviewed: 2026-10-21
+Last reviewed: 2026-11-19
 
 ## Purpose
 
@@ -122,6 +122,31 @@ Treatments:
 - The 30-frame GIF was converted to an animated WebP with the original frame
   duration and continuous looping.
 - Synthetic sample data is labeled as such in the source repository.
+
+## Job Fit Research Agent
+
+| Public file | Source | Use |
+| --- | --- | --- |
+| `projects/job-fit/overview.webp` | `design/job-fit-evidence.html` | Project card and overview |
+| `projects/job-fit/audit.webp` | `design/job-fit-evidence.html` | Evidence and audit detail |
+
+Repository:
+[zt5rice/job-fit-research-agent](https://github.com/zt5rice/job-fit-research-agent)
+
+Source material:
+
+- Sanitized offline sample outputs under `examples/sample_outputs/`.
+- Evaluation metrics from the 15-case synthetic corpus.
+- README architecture and limitations.
+
+Treatments:
+
+- Rendered as 1600 x 900 evidence boards, then exported to WebP and AVIF at
+  640, 1280, and 1600 px.
+- No real job descriptions, candidate profiles, employer names, or credentials
+  appear in the images.
+- The visuals are explicitly labeled as synthetic fixtures and a research
+  prototype, not a production UI or hiring system.
 
 ## Privacy review
 

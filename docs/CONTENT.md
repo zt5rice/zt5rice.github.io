@@ -16,7 +16,7 @@ must remain traceable to the evidence register in this document.
 
 ### Meta description
 
-`Zhao Tang builds reliable data platforms, measurable AI products, and production systems. Explore selected work across streaming data, GraphRAG, natural-language analytics, and scientific computing.`
+`Zhao Tang builds reliable data platforms, measurable AI products, and production systems. Explore selected work across streaming data, GraphRAG, natural-language analytics, controlled AI agents, and scientific computing.`
 
 ### Open Graph title
 
@@ -106,7 +106,7 @@ Heading:
 
 Introduction:
 
-`The portfolio spans streaming infrastructure, retrieval engineering, governed analytics, and scientific computing. Each case study includes the architecture, measured outcomes, and the boundary between a portfolio build and production traffic.`
+`The portfolio spans streaming infrastructure, retrieval engineering, governed analytics, controlled AI research, and scientific computing. Each case study includes the architecture, measured outcomes, and the boundary between a portfolio build and production traffic.`
 
 ### Project cards
 
@@ -221,6 +221,34 @@ Stack line:
 Boundary:
 
 `Research software · synthetic and real-data support`
+
+#### Job Fit Research Agent
+
+Label:
+
+`CONTROLLED AI RESEARCH AGENT`
+
+Title:
+
+`Job Fit Research Agent`
+
+Summary:
+
+`An evidence-backed job-fit prototype that separates LLM extraction from deterministic scoring and routes uncertain cases to human review.`
+
+Visible metrics:
+
+- `15 / 15 evaluation agreement`
+- `100% evidence coverage`
+- `40 tests`
+
+Stack line:
+
+`Python · DeepAgents · LangChain · OpenAI-compatible LLMs · GitHub Actions`
+
+Boundary:
+
+`Independent prototype · synthetic fixtures · human review required`
 
 ## Case-study copy
 
@@ -388,6 +416,47 @@ Boundary:
 #### Takeaway
 
 `The research background shaped how I build software: preserve provenance, make the measurement repeatable, and design for the next person who has to run it.`
+
+### Job Fit Research Agent
+
+Category:
+
+`Controlled AI research agent`
+
+Deck:
+
+`A controlled DeepAgents workflow that turns local job descriptions into inspectable recommendations with exact source quotes, a fixed rubric, and an audit manifest.`
+
+Boundary:
+
+`Independent offline-first prototype using synthetic profiles and job descriptions. Not production software, not a hiring system, and not used to submit applications.`
+
+#### Problem
+
+`Job descriptions mix requirements, preferences, and legal constraints, while a single LLM-generated score can hide missing evidence, prompt injection, or work-authorization blockers. The system needed to separate extraction from judgment and make every recommendation inspectable.`
+
+#### What I built
+
+- `Built a real DeepAgents planner with a narrow job_analyst subagent, typed local tools, and a filesystem-backed execution context.`
+- `Kept scoring outside the model: deterministic Python validates the structured facts and computes the only score that reaches the report.`
+- `Added evidence validation for exact quotes, line locators, duplicate IDs, malformed output, prompt injection, and hard authorization blockers.`
+- `Built a human-review gate plus controlled deterministic fallback when live model output cannot be validated.`
+- `Added run manifests with input hashes, tool events, rubric versions, warnings, and limitations, backed by 40 unit tests and a 15-case regression corpus.`
+
+#### Evidence
+
+- `15/15 synthetic recommendation agreement in the current offline evaluation.`
+- `100% mean evidence coverage with exact quote and line-location checks.`
+- `0 hard-blocker false-positive applies in the regression corpus.`
+- `40 unit tests cover scoring, evidence tampering, prompt injection, privacy, reporting, and the real DeepAgents assembly.`
+
+#### Trade-offs and limitations
+
+`The 100% evaluation result is measured on a 15-case synthetic corpus with deterministic offline extraction; it does not establish production hiring accuracy. Live extraction quality depends on the configured model provider, the rubric is not calibrated against a large hiring dataset, and no application or employer-contact action is automated.`
+
+#### Takeaway
+
+`The important design decision is not using an LLM to make the final decision. The model extracts structure, while deterministic code verifies evidence, applies the rubric, and forces uncertain or high-impact cases into human review.`
 
 ## Experience
 
@@ -624,6 +693,10 @@ number, add it here first with evidence.
 | F22 | NL2SQL end-to-end latency | approximately `25 s → 7 s` | `public/resume/Zhao_Tang_Resume_DataAI_2026-10-21.pdf` |
 | F23 | NL2SQL tests | `81` backend + `51` frontend | `public/resume/Zhao_Tang_Resume_DataAI_2026-10-21.pdf` |
 | F24 | nanotrack validation run | `10,000` frames; anisotropic diffusion | `nanoparticle-video-pipeline/README.md`; tracking-report preview |
+| F25 | Job Fit evaluation corpus | `15` synthetic labeled cases | `job-fit-research-agent/evals/labeled_jobs.json` |
+| F26 | Job Fit recommendation agreement | `15/15` offline synthetic cases | `job-fit-research-agent/src/job_fit/evaluation.py`; local verified run |
+| F27 | Job Fit evidence coverage | `100%` mean evidence coverage; `0` unsupported claims | `job-fit-research-agent/src/job_fit/evaluation.py`; local verified run |
+| F28 | Job Fit test suite | `40` unit tests; `0` hard-blocker false applies | `job-fit-research-agent/.github/workflows/ci.yml`; local verified run |
 
 ## Claims that must not be published
 
@@ -637,6 +710,7 @@ number, add it here first with evidence.
 - Do not say the research publications were produced by the 2026 nanotrack Python implementation.
 - Do not state that the portfolio site is “available for opportunities” unless Zhao Tang explicitly adds that status.
 - Do not present a generic `100M+` claim beside a personal portfolio project; attribute it to Intuit data products.
+- Do not present Job Fit Research Agent’s synthetic evaluation as production hiring accuracy or as evidence of real-world employer performance.
 
 ## Copy QA checklist
 
@@ -644,7 +718,7 @@ number, add it here first with evidence.
 - [x] No generic “passionate engineer” language.
 - [x] Positioning matches the approved `Data & AI Systems` direction.
 - [x] Contact details match approved values.
-- [x] Every public metric maps to F01–F24.
+- [x] Every public metric maps to F01–F28.
 - [x] Publication copy states exactly 6 peer-reviewed publications and excludes
   posters/presentations from the count.
 - [x] Portfolio/demo boundaries are explicit.
